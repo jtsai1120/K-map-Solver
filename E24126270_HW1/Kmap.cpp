@@ -989,6 +989,7 @@ KmapSolution *solveKmap(int numVar, const vector<int> minterms, const vector<int
     return sol;
 }
 
+/*
 void printKmapSolution(KmapSolution *sol) {
     int nRow, nCol;
     switch (sol->numVar) {
@@ -1036,10 +1037,10 @@ void printKmapSolution(KmapSolution *sol) {
 
 int main() {
     int numVar = 4;
-    vector<int> minterms = {0, 4, 5, 6, 10, 11};
-    vector<int> dontcares = {1, 13, 14, 15};
+    vector<int> minterms = {};
+    vector<int> dontcares = {};
     KmapSolution *sol = solveKmap(numVar, minterms, dontcares);
     printKmapSolution(sol);
     return 0;
 }
-
+*/
