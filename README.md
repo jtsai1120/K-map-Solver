@@ -4,7 +4,7 @@
 
 # Flow Chart
 
-![Untitled Diagram.drawio (2).png](Kmap%20Report%209c6a9331be0b4db8b8abf9192dc759bf/Untitled_Diagram.drawio_(2).png)
+![Untitled Diagram.drawio (2).png](README_pic/Untitled_Diagram.drawio_(2).png)
 
 <aside>
 📢 我的程式中 numVar=2, 3 的解題流程與 numVar=4 概念上基本相同，此處僅列出numVar=4 的解題流程。
@@ -566,6 +566,9 @@
     
 
 # 2-Var Testcase
+![Untitled](README_pic/Untitled.png)
+
+![Untitled](README_pic/Untitled%201.png)
 
 1. 將 minterms、dontcare 加入 kmap
 2. 確認非 edge cases ( all 1+x or all 0+x )
@@ -576,14 +579,10 @@
     - (0, 0) 和 (1, 0) 可合併為 2x1 的 (0, 0)
 6. 因 1x1 的 (0, 0), (1, 0), (1, 1) 皆可被使用合成為 1x2 或 2x1，因此皆非 Prime Implicants，從 **_1x1** 中刪除。
 
-![Untitled](Kmap%20Report%209c6a9331be0b4db8b8abf9192dc759bf/Untitled.png)
-
-![Untitled](Kmap%20Report%209c6a9331be0b4db8b8abf9192dc759bf/Untitled%201.png)
-
-1. 將目前所有 Prime Implicant ( 1x2 的 (1, 0)、2x1 的 (0, 0) ) 轉換為 PI 類型後加入 **primes_non_literals**
+7. 將目前所有 Prime Implicant ( 1x2 的 (1, 0)、2x1 的 (0, 0) ) 轉換為 PI 類型後加入 **primes_non_literals**
     - 1x2 的 (1, 0) ⇒ {1x2, (1, 0)}
     - 2x1 的 (0, 0) ⇒ {2x1, (0, 0)}
-2. 確認是否有 Prime Implicant 全由 dontcare 組成 (檢查是否包含 minterm)：
+8.. 確認是否有 Prime Implicant 全由 dontcare 組成 (檢查是否包含 minterm)：
     - {1x2, (1, 0)} 包含 minterm 位於 (1, 0)，因此並非全由 dontcare 組成
     - {2x1, (0, 0)} 包含 minterm 位於 (0, 0)，因此並非全由 dontcare 組成
     
@@ -623,6 +622,10 @@
 
 # 3-Var Testcase
 
+![Untitled](README_pic/Untitled%202.png)
+
+![Untitled](README_pic/Untitled%203.png)
+
 1. 將 minterms、dontcare 加入 kmap
 2. 確認非 edge cases ( all 1+x or all 0+x )
 3. 尋找 1x1 Implicant 並加入 **_1x1** ⇒ (0, 0), (0, 1), (1, 0), (1, 1), (1, 2)
@@ -633,10 +636,6 @@
 5. 尋找兩個相鄰的 1x1 合成 2x1 並加入 **_2x1**
     - (0, 0) 和 (1, 0) 可合併為 2x1 的 (0, 0)
     - (0, 1) 和 (1, 1) 可合併為 2x1 的 (0, 1)
-
-![Untitled](Kmap%20Report%209c6a9331be0b4db8b8abf9192dc759bf/Untitled%202.png)
-
-![Untitled](Kmap%20Report%209c6a9331be0b4db8b8abf9192dc759bf/Untitled%203.png)
 
 1. 因 1x1 的 (0, 0), (0, 1), (1, 0), (1, 1), (1, 2) 皆可被使用合成為 1x2 或 2x1，因此皆非 Prime Implicants，從 **_1x1** 中刪除。
 2. 尋找兩個相鄰的 1x2 合成 1x4 並加入 **_1x4**
@@ -691,6 +690,10 @@
 
 # 4-Var Testcase
 
+![Untitled](README_pic/Untitled%204.png)
+
+![Untitled](README_pic/Untitled%205.png)
+
 1. 將 minterms、dontcare 加入 kmap
 2. 確認非 edge cases ( all 1+x or all 0+x )
 3. 尋找 1x1 Implicant 並加入 **_1x1** ⇒ (0, 0), (0, 1), (1, 0), (1, 1), (1, 2), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3)
@@ -708,10 +711,6 @@
     - (2, 2) 和 (3, 2) 可合併為 2x1 的 (2, 2)
     - (2, 3) 和 (3, 3) 可合併為 2x1 的 (2, 3)
     - (3, 1) 和 (1, 1) 可合併為 2x1 的 (3, 1)
-
-![Untitled](Kmap%20Report%209c6a9331be0b4db8b8abf9192dc759bf/Untitled%204.png)
-
-![Untitled](Kmap%20Report%209c6a9331be0b4db8b8abf9192dc759bf/Untitled%205.png)
 
 1. 因 1x1 的 (0, 0), (0, 1), (1, 0), (1, 1), (1, 2), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3) 皆可被使用合成為 1x2 或 2x1，因此皆非 Prime Implicants，從 **_1x1** 中刪除。
 2. 尋找兩個相鄰的 1x2 合成 1x4 並加入 **_1x4**
